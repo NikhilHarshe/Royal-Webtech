@@ -1,0 +1,93 @@
+/* write your css here */
+
+/* *{
+    background: #170238db;
+} */
+
+
+
+/* Third Button */
+
+#button-3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #button-3 a {
+    position: relative;
+    transition: all .45s ease-Out;
+  }
+  
+  #circle {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: rgb(37 99 235);
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 20px;
+    left: 70px;
+  }
+  
+  #button-3:hover #circle {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+  }
+  
+  #button-3:hover a {
+    color: #2D3142;
+  }
+
+  #button-7 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #button-7 a {
+    position: relative;
+    left: 0;
+    transition: all .35s ease-Out;
+  }
+  
+  #dub-arrow {
+    width: 100%;
+    height: 100%;
+    background: #2dba1e;
+    left: -200px;
+    position: absolute;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #button-7 img {
+    width: 20px;
+    height: auto;
+  }
+  
+  #button-7:hover #dub-arrow {
+    left: 0;
+  }
+  
+  #button-7:hover a {
+    left: 150px;
+  }
+  
+  @media screen and (min-width:1000px) {
+    h1 {
+      font-size: 2.2em;
+    }
+    #container {
+      width: 50%;
+    }
+  }
