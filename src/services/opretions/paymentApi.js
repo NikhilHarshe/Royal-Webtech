@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { paymentEndpoints } from "../apis";
 import { apiConnector } from "../apiconnector";
-import rzpLogo from "../../Components/assets/royals_webtech_logo.jpeg"
+import rzpLogo from "../../Components/assets/razorpay9274.webp"
 
 
 const { PRODUCT_PAYMENT_API, PRODUCT_VERIFY_API, TEMPDATA_API } = paymentEndpoints;
@@ -73,7 +73,7 @@ export const BuyProduct = async( total_amount) => {
       currency: orderResponse.data.data.currency,
       amount: `${orderResponse.data.data.amount}`,
       order_id: orderResponse.data.data.id,
-      name: "Royal",
+      name: "Blue pill",
       description: "Thank you for Purchasing the Product.",
       image: rzpLogo,
       prefill: {
