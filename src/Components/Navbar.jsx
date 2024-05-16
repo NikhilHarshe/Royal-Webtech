@@ -36,10 +36,11 @@ const Navbar = () => {
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
     return (
-        <div className=' mx-auto bg-gray-800 text-gray-300 font-semibold fixed w-full z-40'>
+        <div className=' mx-auto p-4 bg-gray-800 text-gray-300 font-semibold fixed w-full z-40'>
             <nav className=' w-9/12 flex justify-between  mx-auto '>
                 <div>
-                    <a href="/"><img src={logo} width={150} alt="logo" /></a>
+                    {/* <a href="/"><img src={logo} width={150} alt="logo" /></a> */}
+                    <a href="/"><img src="https://image.pngaaa.com/979/1594979-middle.png" width={40} alt="logo" /></a>
                     
                 </div>
                 <ul className=' flex gap-3 items-center'>
