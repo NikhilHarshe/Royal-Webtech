@@ -10,3 +10,9 @@ export const paymentEndpoints = {
   }
 
 //   /api/v1/payment
+export const userEndpoints = {
+  USER_SIGNUP_API : BASE_URL + "/user/signup",
+  USER_LOGIN_API : BASE_URL + "/user/login",
+  UPDATE_USER_DATA_API : BASE_URL + "/user/updateUserDetails",
+  SHOW_USER_DETAILS_API : BASE_URL + "/user/getUserDetails"
+}

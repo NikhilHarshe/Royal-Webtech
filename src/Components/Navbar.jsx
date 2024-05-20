@@ -5,6 +5,9 @@ import { IoSearch } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 
 import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCartOpen } from '../slices/cartSlice';
+import ProfileDropdown from './auth/ProfileDropdown';
 
 const subLinks = [
     {
@@ -33,7 +36,18 @@ const aboutLinks = [
 ];
 
 const Navbar = () => {
-    const [count, setCount] = useState(0);
+    const dispatch = useDispatch();
+    const { Token } = useSelector((state) => state.auth);
+    const {totalItems} = useSelector((state) => state.cart);
+
+    const openCart = () => {
+        // console.log("bol n bhai ")
+        dispatch(setCartOpen());
+    }
+    const [count, setCount] = useState(totalItems);
+
+
+
     const navigate = useNavigate();
     return (
         <div className=' mx-auto p-4 bg-gray-800 text-gray-300 font-semibold fixed w-full z-40'>
@@ -41,7 +55,7 @@ const Navbar = () => {
                 <div>
                     {/* <a href="/"><img src={logo} width={150} alt="logo" /></a> */}
                     <a href="/"><img src="https://image.pngaaa.com/979/1594979-middle.png" width={40} alt="logo" /></a>
-                    
+
                 </div>
                 <ul className=' flex gap-3 items-center'>
                     <li className=' hover:text-gray-50 cursor-pointer' onClick={() => navigate("/")}>HOME</li>
@@ -106,18 +120,26 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                <div className=' flex items-center gap-3'>
-                    <button className=' hover:text-gray-50'>LOGIN</button>
-                    <button className=' flex gap-2 hover:text-gray-50 group relative items-center'>
-                        BASKET / $ {count}
+                <div className=' flex gap-4'>
+                    {Token ? (
+                        <ProfileDropdown />
+                    ) : (
+                        <div className=' flex items-center gap-3'>
+                            <button className=' hover:text-gray-50' onClick={() => navigate("/signIn")}>LOGIN</button>
+                            <button className=' hover:text-gray-50' onClick={() => navigate("/signUp")}>SIGNUP</button>
+
+                        </div>
+                    )}
+
+                    <button onClick={() => openCart()} className=' flex gap-2 hover:text-gray-50 group relative items-center'>
+                        BASKET
                         {/* <SlBag className=' text-2xl hover:bg-gray-100' /> */}
                         <div className=' w-7 h-[30px] border-2  bg-gray-900 z-20 group-hover:text-gray-900 group-hover:bg-gray-50'>
-                            0
+                            {count}
                         </div>
-                        <div className=' w-[15px] h-[15px] absolute rounded-full border-2 -top-2 left-[108px] group-hover:-top-[10px]'></div>
+                        <div className=' w-[15px] h-[15px] absolute rounded-full border-2 -top-1 left-[70px] group-hover:-top-[6px]'></div>
                     </button>
                 </div>
-
             </nav>
         </div>
     )
