@@ -25,7 +25,7 @@ import Cart from './Cart';
 
 const product = [
     {
-        _id: 1,
+        _id: "664c6dfe62269f02a9272058",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -35,7 +35,7 @@ const product = [
         discount: "60%"
     },
     {
-        _id: 2,
+        _id: "664c6e3062269f02a927205a",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -45,7 +45,7 @@ const product = [
         discount: "60%"
     },
     {
-        _id: 3,
+        _id: "664c6e3562269f02a927205c",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -55,7 +55,7 @@ const product = [
         discount: "33%"
     },
     {
-        _id: 4,
+        _id: "664c6e3a62269f02a927205e",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -65,7 +65,7 @@ const product = [
         discount: "47%"
     },
     {
-        _id: 5,
+        _id: "664c6e3f62269f02a9272060",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -75,7 +75,7 @@ const product = [
         discount: "43%"
     },
     {
-        _id: 6,
+        _id: "664c6e4762269f02a9272062",
         Name: "SILDENAFIL CITRATE",
         des: "Kamagra Oral Jelly 100mg",
         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
@@ -152,11 +152,11 @@ const Product = () => {
         dispatch(setCartClose());
       }
 
-    const productIdsAndQuantity = cartData.map(cart => ({ _id: cart._id, quantity: cart.quantity }));
+    const productIdsAndQuantity = [{ _id: productData._id, quantity: 1 }];
     const userId = user?._id;
 
     const handelpayment = async () => {
-        await BuyProduct(total_amount);
+        // await BuyProduct(total_amount);
 
         if (!user) {
             closeCart();
@@ -167,7 +167,7 @@ const Product = () => {
         }
         else {
             closeCart();
-            navigate("/CartCheckOut");
+            navigate("/CartCheckOut"); //664c6e3a62269f02a927205e
         }
     }
 
@@ -230,7 +230,7 @@ const Product = () => {
 
                 </div>
             </div>
-            <Cart />
+            {/* <Cart /> */}
         </>
     )
 }

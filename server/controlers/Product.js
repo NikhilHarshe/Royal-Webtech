@@ -3,12 +3,23 @@ const Product = require("../models/Product");
 const { uploadImageToCloudinary } = require("../utils/imageUploader");
 const { json } = require("express");
 
+// _id: 1,
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "60%"
 
 exports.createProduct = async (req, res) => {
     try {
         const { Name,
             Price,
-            Color,
+            des,
+            riview,
+            cutprice,
+            discount,
         } = req.body
 
         const Image = req.files.productImage
@@ -29,7 +40,7 @@ exports.createProduct = async (req, res) => {
             })
         }
 
-        if (!Name || !Image || !Price || !Color) {
+        if (!Name || !Image || !Price || !des || !riview || !cutprice || !discount ) {
             return res.status(403).send({
                 success: false,
                 message: "All Fields are Required",
@@ -49,7 +60,10 @@ exports.createProduct = async (req, res) => {
             Name,
             ImageSrc: ProductImage.secure_url,
             Price,
-            Color,
+            des,
+            riview,
+            cutprice,
+            discount
         })
 
         res.status(200).json({

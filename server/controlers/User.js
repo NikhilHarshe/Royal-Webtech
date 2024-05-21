@@ -250,15 +250,13 @@ exports.getUserDetails = async (req, res) => {
     try {
         const id = req.user.id;
         const user = await User.findById(id).populate('Products.product').exec();
-
+        
         if (!user) {
             return res.status(400).json({
                 success: false,
                 message: "User not Present. Please Sign up to continue.",
             });
         }
-
-
 
         return res.status(200).json({
             success: true,

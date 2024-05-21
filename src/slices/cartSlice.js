@@ -93,7 +93,7 @@ const cartSlice = createSlice({
         localStorage.setItem("total", JSON.stringify(state.total));
         localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
         // Show toast
-        toast.success(`Removed ${removedQuantity} ${product.Name}(s) from cart`);
+        toast.error(`Removed ${removedQuantity} ${product.Name}(s) from cart`);
       }
     },    
     resetCart: (state) => {

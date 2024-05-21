@@ -129,6 +129,8 @@ export const getUserDetails = async (Token) => {
             throw new Error(response.data.message)
         }
         result = response.data.user
+        console.log("SHOW_USER_DETAILS_API response.....", result);
+
     }
     catch (error) {
         toast.error("SHOW_USER_DETAILS_API ERROR...")
