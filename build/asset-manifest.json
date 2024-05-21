@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f12fe796.css",
+    "main.js": "/static/js/main.8d8336cd.js",
+    "static/media/ED-1.jpg": "/static/media/ED-1.b2e157a7127ca3de1e7d.jpg",
+    "static/media/Sexual-Wellness.jpg": "/static/media/Sexual-Wellness.030db537ec8dfffa01fb.jpg",
+    "static/media/Using-Medication.jpg": "/static/media/Using-Medication.328d7a7682862f1c308f.jpg",
+    "static/media/Dr.-Stephan-R.-Bloesch.jpg": "/static/media/Dr.-Stephan-R.-Bloesch.1179e6e8cdfb6055ab48.jpg",
+    "static/media/KAM4UK.jpg": "/static/media/KAM4UK.a182d76a05f7bd15ea0d.jpg",
+    "static/media/Premature-Ejaculation.jpg": "/static/media/Premature-Ejaculation.a71c1744ef02fd1f90f6.jpg",
+    "static/media/Erectile-Dysfunction.jpg": "/static/media/Erectile-Dysfunction.46ba2bfe955fd50f8844.jpg",
+    "static/media/KAM4UK-trustpilot.jpg": "/static/media/KAM4UK-trustpilot.a4ae159bf236dfda662c.jpg",
+    "static/media/main_logo_picsel11.png": "/static/media/main_logo_picsel11.0f9f22bdc2cc50b4c261.png",
+    "static/media/KAM4UK-Kamagra-Oral-Jelly-400x400.jpg": "/static/media/KAM4UK-Kamagra-Oral-Jelly-400x400.aa49a29e9b97b5c43e91.jpg",
+    "static/media/royals_webtech_logo.jpeg": "/static/media/royals_webtech_logo.1f819787a138d5489eb1.jpeg",
+    "index.html": "/index.html",
+    "main.f12fe796.css.map": "/static/css/main.f12fe796.css.map",
+    "main.8d8336cd.js.map": "/static/js/main.8d8336cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f12fe796.css",
+    "static/js/main.8d8336cd.js"
+  ]
+}
