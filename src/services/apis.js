@@ -9,6 +9,9 @@ export const paymentEndpoints = {
     TEMPDATA_API: BASE_URL + "/payment/tempdata"
   }
 
+  // https://royal-webtech.onrender.com/api/v1/user/signup
+  // /signup
+
 //   /api/v1/payment
 export const userEndpoints = {
   USER_SIGNUP_API : BASE_URL + "/user/signup",
