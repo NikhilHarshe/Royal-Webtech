@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const Footer = () => {
     const navigate = useNavigate();
     return (
-        <div className=' pb-7 pt-7 border-t-2 mt- bg-gray-200'>
+        <div className=' pb-7 pt-7 border-t-2 mt- bg-gray-200 '>
             <div className=' w-9/12 mx-auto'>
                 <div className=' flex justify-between'>
                     {/* logo */}

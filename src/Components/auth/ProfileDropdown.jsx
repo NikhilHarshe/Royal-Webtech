@@ -39,7 +39,7 @@ export default function ProfileDropdown() {
           <Link to="/userProfile" onClick={() => setOpen(false)}>
             <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-gray-100 hover:bg-gray-700 hover:text-gray-25">
               <VscDashboard className="text-lg" />
-              Dashboard
+              MyProducts
             </div>
           </Link>
           <div

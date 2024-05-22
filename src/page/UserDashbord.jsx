@@ -2,9 +2,11 @@ import React, { useEffect } from 'react'
 import { getUserDetails } from '../services/opretions/userApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../slices/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const UserDashbord = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { Token } = useSelector((state) => state.auth)
 
     const userData = async () => {
@@ -21,6 +23,17 @@ const UserDashbord = () => {
 
     const productData = user?.Products
     console.log("ProductData : ", productData);
+
+    if(productData.length === 0){
+        console.log("Product data not found ")
+        return (
+            <>
+                <div className=' pt-24 h-[74vh] flex justify-center items-center '>
+                    <h2 className='text-3xl italic font-semibold capitalize'>Your purchase history is empty at the moment.</h2>
+                </div>
+            </>
+        )
+    }
 
 
     return (
@@ -42,7 +55,7 @@ const UserDashbord = () => {
                                 </div>
                             </div>
                             <div className=' flex justify-center align-middle my-auto'>
-                                <button className=' border border-solid border-blue-700 rounded-md h-9 px-4 bg-blue-500 hover:bg-blue-600 text-white'>Downlod Invoice</button>
+                                <button className=' border border-solid border-blue-700 rounded-md h-9 px-4 bg-blue-500 hover:bg-blue-600 text-white' onClick={() => navigate(`/invoice/${data._id}`)}>Downlod Invoice</button>
                             </div>
                         </div>
                     ))

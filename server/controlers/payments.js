@@ -89,7 +89,7 @@ const addProduct = async (productsWithQuantities, userId) => {
       // if(privProduct){
       //   console.log("PrivProduct : ", privProduct);
       // }
-      user.Products.push({ product: _id, quantity });
+      user.Products.push({ product: _id, quantity, purchesDate: Date.now() });
       await Product.findByIdAndUpdate(_id, { $push: { User: user._id } });
     }
     await user.save();

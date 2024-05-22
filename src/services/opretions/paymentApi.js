@@ -134,7 +134,7 @@ import toast from "react-hot-toast";
 import { paymentEndpoints } from "../apis";
 import { apiConnector } from "../apiconnector";
 import rzpLogo from "../../Components/assets/razorpay9274.webp"
-import { resetCart } from "../../slices/cartSlice";
+import { resetCart, setCartClose } from "../../slices/cartSlice";
 
 
 const { PRODUCT_PAYMENT_API, PRODUCT_VERIFY_API, TEMPDATA_API } = paymentEndpoints;
@@ -250,6 +250,7 @@ async function verifyPayment(bodyData, resetCart, navigate, dispatch) {
       toast.success("Payment Successful ")
       navigate("/userProfile")
       dispatch(resetCart())
+      dispatch(setCartClose());
     }
 
   

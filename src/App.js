@@ -12,6 +12,8 @@ import Register from "./page/Register";
 import SignUp from "./page/SignUp"
 import CartForm from "./page/CartForm";
 import UserDashbord from "./page/UserDashbord";
+import Invoice from "./Components/Invoice"
+import PdfGenerator from "./page/PdfGenerator";
 
 function App() {
   return (
@@ -28,11 +30,13 @@ function App() {
           <Route path="/termscondi" element={<TermCondi />} ></Route>
           <Route path="/privacypolicy" element={<PrivacyPolicy />} ></Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/PdfGenerator" element={<PdfGenerator />} />
+          <Route path="/invoice/:productId" element={<Invoice />} />
           <Route path="/product/:productId" element={<Product />} ></Route>
         </Routes>
         <Cart/>
       </div>
-      <Footer />
+      <Footer  />
     </div>
   );
 }

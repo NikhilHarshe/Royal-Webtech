@@ -54,6 +54,10 @@ const userSchema = new mongoose.Schema({
             quantity: {
                 type: Number,
                 default: 1 // Set a default quantity if not provided
+            },
+            purchesDate: {
+                type: Date, 
+                // default: Date.now
             }
         }
     ],
