@@ -19,6 +19,7 @@ exports.capturePayment = async (req, res) => {
   // console.log("inside backend");
   const options = {
     amount: total_amount * 100,
+    // currency: "USD",
     currency: "INR",
     receipt: Math.random(Date.now()).toString(),
   };
