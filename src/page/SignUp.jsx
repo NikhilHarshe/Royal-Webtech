@@ -2,9 +2,11 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom'
 import { signUp } from '../services/opretions/userApi';
+import { useDispatch } from 'react-redux';
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const {
         register,
         handleSubmit,
@@ -17,7 +19,7 @@ const SignUp = () => {
         const formData = getValues();
         // console.log("formData : ", data);
         console.log("formData : ", formData);
-        const result = await signUp(formData, navigate);
+        const result = await dispatch(signUp(formData, navigate));
 
         // console.log("Result in CartForm : ", result);
     }

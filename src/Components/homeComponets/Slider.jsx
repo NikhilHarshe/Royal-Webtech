@@ -41,9 +41,9 @@ const Slider = ({ product }) => {
                                     <img src={data.ImageSrc} alt="product" />
                                     {/* <img src={data.image} alt="product" /> */}
                                     <p className=' text-xs text-center'>
-                                        {data.Name}
+                                    {data.des}
                                     </p>
-                                    <p className=' text-center text-blue-500'>{data.des} </p>
+                                    <p className=' text-center text-blue-500'>{data.Name} </p>
                                     <div className=' flex justify-center gap-1'>
                                         <p>${data.cutprice} </p> {" - "}
                                         <p> ${data.Price}</p>

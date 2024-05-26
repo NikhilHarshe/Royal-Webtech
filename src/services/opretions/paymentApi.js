@@ -135,6 +135,7 @@ import { paymentEndpoints } from "../apis";
 import { apiConnector } from "../apiconnector";
 import rzpLogo from "../../Components/assets/razorpay9274.webp"
 import { resetCart, setCartClose } from "../../slices/cartSlice";
+import { setUser } from "../../slices/userSlice";
 
 
 const { PRODUCT_PAYMENT_API, PRODUCT_VERIFY_API, TEMPDATA_API } = paymentEndpoints;
@@ -241,13 +242,14 @@ async function verifyPayment(bodyData, resetCart, navigate, dispatch) {
   try {
     const response = await apiConnector("POST", PRODUCT_VERIFY_API, bodyData)
 
-    console.log("VERIFY PAYMENT RESPONSE FROM BACKEND............", response)
+    console.log("VERIFY PAYMENT RESPONSE FROM BACKEND............", response?.data?.data)
 
     if (!response.data.success) {
       console.log("inside success verify");
       throw new Error(response.data.message)
     }else{
       toast.success("Payment Successful ")
+      dispatch(setUser(response?.data?.data));
       navigate("/userProfile")
       dispatch(resetCart())
       dispatch(setCartClose());

@@ -40,6 +40,8 @@ const Navbar = () => {
     const { Token } = useSelector((state) => state.auth);
     const {totalItems} = useSelector((state) => state.cart);
 
+    console.log("Token ", Token);
+
     const openCart = () => {
         // console.log("bol n bhai ")
         dispatch(setCartOpen());

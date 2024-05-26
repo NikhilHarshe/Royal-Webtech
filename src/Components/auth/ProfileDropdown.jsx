@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 // import useOnClickOutside from "../../../hooks/useOnClickOutside"
 import { logout } from "../../services/opretions/userApi"
+import useOnClickOutside from "../useOnClickOutside"
 
 export default function ProfileDropdown() {
   const { user } = useSelector((state) => state.user)
@@ -16,7 +17,7 @@ export default function ProfileDropdown() {
 
   console.log("User : ", user);
 
-  // useOnClickOutside(ref, () => setOpen(false))
+  useOnClickOutside(ref, () => setOpen(false))
 
   if (!user) return null
 

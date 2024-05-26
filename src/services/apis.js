@@ -19,3 +19,11 @@ export const userEndpoints = {
   UPDATE_USER_DATA_API : BASE_URL + "/user/updateUserDetails",
   SHOW_USER_DETAILS_API : BASE_URL + "/user/getUserDetails"
 }
+
+export const productEndpoints = {
+  CREATE_PRODUCT_API : BASE_URL + "/product/createProduct",
+  EDIT_PRODUCT_API : BASE_URL + "/product/editProduct",
+  GET_ALL_PRODUCTS_API : BASE_URL + "/product/getAllProducts",
+  GET_PRODUCT_DETAILS_API : BASE_URL + "/product/getProductDetails",
+  DELETE_PRODUCT_API : BASE_URL + "/product/deleteProduct"
+}

@@ -55,9 +55,9 @@ exports.verifyPayment = async (req, res) => {
 
   if (expectedSignature === razorpay_signature) {
     try {
-      await addProduct(idsAndQuantity, userId);
+      const data = await addProduct(idsAndQuantity, userId);
       console.log("Offter addProduct ");
-      return res.status(200).json({ success: true, message: "Payment Verified" });
+      return res.status(200).json({ success: true, message: "Payment Verified", data});
     } catch (error) {
       console.log(error);
       return res.status(500).json({ success: false, error: "Error adding products" });
@@ -94,9 +94,10 @@ const addProduct = async (productsWithQuantities, userId) => {
       await Product.findByIdAndUpdate(_id, { $push: { User: user._id } });
     }
     await user.save();
-    console.log("Offter adding Product User : ", user);
+    const Updateduser = await User.findById(userId).populate('Products.product').exec();
+    console.log("Offter adding Product User : ", Updateduser);
 
-    return true; // Indicate success
+    return Updateduser; // Indicate success
   } catch (error) {
     console.log(error);
     throw new Error("Error adding products to user");

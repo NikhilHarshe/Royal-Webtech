@@ -23,7 +23,7 @@ const CartForm = () => {
     const onSubmit = async (data, e) => {
         const formData = getValues();
         // console.log("formData : ", data);
-        const result = await updateUser(formData, Token, dispatch, navigate);
+        const result = await dispatch(updateUser(formData, Token, navigate));
         // dispatch(setCartOpen());
         // console.log("Result in CartForm : ", result);
         const user = localStorage.getItem("user");

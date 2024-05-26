@@ -18,7 +18,7 @@ const SignInN = () => {
   const onSubmit = async (data, e) => {
     const formData = getValues();
     console.log("formData : ", formData);
-    await login(formData, navigate, dispatch);
+    await dispatch(login(formData, navigate));
 
     // console.log("Result in CartForm : ");
   }

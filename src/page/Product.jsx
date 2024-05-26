@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactStars from "react-rating-stars-component";
 import { TiStarFullOutline } from "react-icons/ti"
 import Image1 from "../Components/assets/SliderImage/KAM4UK-Kamagra-Oral-Jelly-400x400.jpg"
@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, resetCart, setCartClose } from '../slices/cartSlice';
 import Cart from './Cart';
+import { fetchProductDetails } from '../services/opretions/product';
 
 // const productData = {
 //     Name: "Kamagra Oral Jelly 100mg",
@@ -133,14 +134,32 @@ const Product = () => {
     const navigate = useNavigate();
     const { totalItems, cartData, total, cartOpen } = useSelector((state) => state.cart);
     const { user } = useSelector((state) => state.user);
+    const [productData, setProductData] = useState('');
 
-    let productData = {};
-    product.forEach(element => {
-        if (element._id == productId.productId) {
-            productData = element
-            // console.log("product id ", productId.productId);
+    useEffect(() => {
+        const fetchData = async() => {
+            try{
+                const res = await dispatch(fetchProductDetails(productId))
+                console.log("data in product ", res?.data);
+                setProductData(res?.data);
+            }
+            catch (error){
+                console.log("Get Product data Api error in Proudct page",error);
+            }
         }
-    });
+
+        fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      console.log("product data prpeppdddddd", productData);
+
+    // let productData = {};
+    // product.forEach(element => {
+    //     if (element._id == productId.productId) {
+    //         productData = element
+    //         // console.log("product id ", productId.productId);
+    //     }
+    // });
 
     
     const CartHandler = (product) => {

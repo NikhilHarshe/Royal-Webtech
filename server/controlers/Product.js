@@ -169,8 +169,10 @@ exports.getAllProducts = async (req, res) => {
 exports.getProductDetails = async (req, res) => {
     try {
       const { ProductId } = req.body
+      const _id = ProductId.productId;
+      console.log("product id in backend ", _id)
       const ProductDetails = await Product.findOne({
-        _id: ProductId,
+        _id: _id,
       })
     //   .populate("User")
     //     .exec()

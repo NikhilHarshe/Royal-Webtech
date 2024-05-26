@@ -12,109 +12,109 @@ import Using from "../Components/assets/Medication information/Using-Medication.
 import ED1 from "../Components/assets/OurBlog/ED-1.jpg"
 import Cart from './Cart'
 
-const product = [
-    {
-        _id: "664c6dfe62269f02a9272058",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "60%"
-    },
-    {
-        _id: "664c6e3062269f02a927205a",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "60%"
-    },
-    {
-        _id: "664c6e3562269f02a927205c",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "33%"
-    },
-    {
-        _id: "664c6e3a62269f02a927205e",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "47%"
-    },
-    {
-        _id: "664c6e3f62269f02a9272060",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "43%"
-    },
-    {
-        _id: "664c6e4762269f02a9272062",
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "41%"
-    },
-    {
-        _id: 7,
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "47%"
-    },
-    {
-        _id: 8,
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "47%"
-    },
-    {
-        _id: 9,
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "60%"
-    },
-    {
-        _id: 10,
-        Name: "SILDENAFIL CITRATE",
-        des: "Kamagra Oral Jelly 100mg",
-        ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
-        riview: "6",
-        cutprice: 14.00,
-        Price: 100.00,
-        discount: "60%"
-    },
+// const product = [
+//     {
+//         _id: "664c6dfe62269f02a9272058",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "60%"
+//     },
+//     {
+//         _id: "664c6e3062269f02a927205a",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "60%"
+//     },
+//     {
+//         _id: "664c6e3562269f02a927205c",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "33%"
+//     },
+//     {
+//         _id: "664c6e3a62269f02a927205e",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "47%"
+//     },
+//     {
+//         _id: "664c6e3f62269f02a9272060",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "43%"
+//     },
+//     {
+//         _id: "664c6e4762269f02a9272062",
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "41%"
+//     },
+//     {
+//         _id: 7,
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "47%"
+//     },
+//     {
+//         _id: 8,
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "47%"
+//     },
+//     {
+//         _id: 9,
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "60%"
+//     },
+//     {
+//         _id: 10,
+//         Name: "SILDENAFIL CITRATE",
+//         des: "Kamagra Oral Jelly 100mg",
+//         ImageSrc: "https://kam4uk.com/wp-content/uploads/2024/02/KAM4UK-Kamagra-Oral-Jelly.jpg",
+//         riview: "6",
+//         cutprice: 14.00,
+//         Price: 100.00,
+//         discount: "60%"
+//     },
 
-];
+// ];
 
 const members = [
     {
@@ -226,7 +226,7 @@ const OurBlog = [
 ];
 
 
-const Home = () => {
+const Home = ({product}) => {
 
     return (
         <>
