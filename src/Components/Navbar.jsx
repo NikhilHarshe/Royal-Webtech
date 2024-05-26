@@ -116,7 +116,7 @@ const Navbar = () => {
                         </div>
                     </li>
                     <li className=' hover:text-gray-50 cursor-pointer'>SHOP</li>
-                    <li className=' hover:text-gray-50 cursor-pointer'>CONTACT US</li>
+                    <li className=' hover:text-gray-50 cursor-pointer' onClick={() => navigate("/contactUs")}>CONTACT US</li>
                     <li className=' bg-blue-600 hover:bg-blue-700 p-2 rounded-md text-xl'>
                         <IoSearch />
                     </li>

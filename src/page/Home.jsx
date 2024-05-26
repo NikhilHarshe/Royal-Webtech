@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from "../Components/homeComponets/Slider"
 import ReviweSlider from "../Components/homeComponets/ReviweSlider"
 import kam4uk from "../Components/assets/KAM4UK.jpg"
-import Image1 from "../Components/assets/SliderImage/KAM4UK-Kamagra-Oral-Jelly-400x400.jpg"
 import member from "../Components/assets/Members/Dr.-Stephan-R.-Bloesch.jpg"
 import trustpilot from "../Components/assets/KAM4UK-trustpilot.jpg"
 import Sexual from "../Components/assets/Medication information/Sexual-Wellness.jpg"
-import Erectile from "../Components/assets/Medication information/Erectile-Dysfunction.jpg"
-import Premature from "../Components/assets/Medication information/Premature-Ejaculation.jpg"
-import Using from "../Components/assets/Medication information/Using-Medication.jpg"
 import ED1 from "../Components/assets/OurBlog/ED-1.jpg"
-import Cart from './Cart'
+
 
 // const product = [
 //     {
@@ -270,7 +266,7 @@ const Home = ({product}) => {
                 <section className=' w-9/12 mx-auto flex flex-col gap-5'>
                     <div className='  flex flex-col gap-5'>
                         <h2 className=' text-3xl text-gray-900 font-semibold'>About us</h2>
-                        <p>At KAM4UK – Kamagra Oral Jelly UK, we are dedicated to improving men’s sexual healthcare. We commit to offering effective, scientifically-backed online solutions. Our team includes renowned endocrinologists, clinical psychologists, and skilled urologists, leveraging their expertise to enhance our services. Our vision is to be recognized as the definitive resource for insights into sexual health and medications across the United Kingdom. We aim to provide an inclusive, empathetic, and respectful healthcare experience.</p>
+                        <p>At BLUEPILL – Kamagra Oral Jelly UK, we are dedicated to improving men’s sexual healthcare. We commit to offering effective, scientifically-backed online solutions. Our team includes renowned endocrinologists, clinical psychologists, and skilled urologists, leveraging their expertise to enhance our services. Our vision is to be recognized as the definitive resource for insights into sexual health and medications across the United Kingdom. We aim to provide an inclusive, empathetic, and respectful healthcare experience.</p>
                         <p>We invite you to support our mission and contribute to advancing men’s sexual health. Explore the carefully selected and certified products featured on our site. For more information and to start your journey towards better health with us, please take a moment to read further [HERE].</p>
                     </div>
 
@@ -348,7 +344,7 @@ const Home = ({product}) => {
                 <section className=' w-9/12 mx-auto'>
                     <div className=' flex flex-col items-center gap-5'>
                         <h2 className=' text-gray-900 text-3xl font-semibold text-center'>Disclaimer</h2>
-                        <p className=' text-center'>We reserve all rights and issue this disclaimer to clarify that any trademarks referenced herein are the property of their respective owners. The information provided on <span className='text-gray-900 text-lg font-semibold'>KAM4UK – Kamagra Oral Jelly UK</span>, encompassing brands, trademarks, guides, news, reviews, written content, images, illustrations, and any similar material, is safeguarded under intellectual property legislation.</p>
+                        <p className=' text-center'>We reserve all rights and issue this disclaimer to clarify that any trademarks referenced herein are the property of their respective owners. The information provided on <span className='text-gray-900 text-lg font-semibold'>Blue Pills</span>, encompassing brands, trademarks, guides, news, reviews, written content, images, illustrations, and any similar material, is safeguarded under intellectual property legislation.</p>
                         <button className=' border-2 border-blue-600 text-blue-600 px-3 py-1 rounded hover:bg-blue-600 hover:text-gray-100 hover:duration-200'>MORE DETAILS</button>
                     </div>
                 </section>

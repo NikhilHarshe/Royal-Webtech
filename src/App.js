@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getUserDetails } from "./services/opretions/userApi";
 import { getAllProducts } from "./services/opretions/product";
+import ContactUs from "./page/ContactUs";
 
 function App() {
   const dispatch = useDispatch()
@@ -64,6 +65,7 @@ function App() {
           <Route path="/" element={<Home product={product} />} ></Route>
           <Route path="/signIn" element={<SignInN />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/userProfile" element={<UserDashbord />} />
           <Route path="/cartCheckOut" element={<CartForm />} />

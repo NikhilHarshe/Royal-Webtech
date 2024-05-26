@@ -21,7 +21,9 @@ const Footer = () => {
                             440022</p>
                         <div className=' flex gap-3'>
                         <h4 className=' font-semibold text-lg'>Contact No. :</h4>
-                        <p> +91 9874563210</p>
+                        <p> +91 9356337901</p>
+                        <h4 className=' font-semibold text-lg'>Email :</h4>
+                        <p> allmedicinesdotcom@gmail.com</p>
                         </div>
                     </div>
                     {/* Web Info */}

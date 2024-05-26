@@ -105,7 +105,8 @@ const PrivacyPolicy = () => {
                     </p>
                     <address className=' mt-16 font-semibold'>
                         Blue Pills <br />
-                        bluepills@gmail.com
+                        9356337901 <br/>
+                        allmedicinesdotcom@gmail.com
                     </address>
                 </p>
             </div>
