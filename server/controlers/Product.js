@@ -86,6 +86,7 @@ exports.editProduct = async (req, res) => {
     try {
         const { ProductId } = req.body
         const updates = req.body
+        console.log("product id in db : ",ProductId);
         const product = await Product.findById(ProductId)
 
         const id = req.user.id;
@@ -110,7 +111,7 @@ exports.editProduct = async (req, res) => {
         // If ProductImage Image is found, update it
         if (req.files) {
             // console.log("Product update")
-            const Image = req.files.thumbnailImage
+            const Image = req.files.productImage
             const ProductImage = await uploadImageToCloudinary(
                 Image,
                 process.env.FOLDER_NAME

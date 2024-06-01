@@ -19,6 +19,11 @@ import { useEffect, useState } from "react";
 import { getUserDetails } from "./services/opretions/userApi";
 import { getAllProducts } from "./services/opretions/product";
 import ContactUs from "./page/ContactUs";
+import ErectileDysfunction from "./Components/SexualWellnessCom/ErectileDysfunction";
+import PrematureEjaculation from "./Components/SexualWellnessCom/PrematureEjaculation";
+import Medicines from "./Components/SexualWellnessCom/Medicines";
+import Shop from "./page/Shop";
+import AboutUs from "./page/AboutUs";
 
 function App() {
   const dispatch = useDispatch()
@@ -66,8 +71,14 @@ function App() {
           <Route path="/signIn" element={<SignInN />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/Shop" element={<Shop product={product}/>} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/userProfile" element={<UserDashbord />} />
+          <Route path="/SexualWellness/ErectileDysfunction" element={<ErectileDysfunction/>} />
+          <Route path="/SexualWellness/PrematureEjaculation" element={<PrematureEjaculation/>} />
+          <Route path="/SexualWellness/Medicines" element={<Medicines/>} />
+          <Route path="/SexualWellness/Informetion" element={<ErectileDysfunction/>} />
           <Route path="/cartCheckOut" element={<CartForm />} />
           <Route path="/termscondi" element={<TermCondi />} ></Route>
           <Route path="/privacypolicy" element={<PrivacyPolicy />} ></Route>

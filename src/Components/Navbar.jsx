@@ -12,20 +12,20 @@ import ProfileDropdown from './auth/ProfileDropdown';
 const subLinks = [
     {
         title: "Erectile Dysfunction",
-        link: "/catalog/Erectile_Dysfunction",
+        link: "/sexualWellness/ErectileDysfunction",
     },
     {
         title: "Premeture Ejaculation",
-        link: "/catalog/Premeture_Ejaculation",
+        link: "/sexualWellness/PrematureEjaculation",
     },
     {
         title: "Medicines",
-        link: "/catalog/Medicines",
+        link: "/sexualWellness/Medicines",
     },
-    {
-        title: "Information",
-        link: "/catalog/Information",
-    },
+    // {
+    //     title: "Information",
+    //     link: "/sexualWellness/Information",
+    // },
 ];
 
 const aboutLinks = [
@@ -62,11 +62,9 @@ const Navbar = () => {
                 <ul className=' flex gap-3 items-center'>
                     <li className=' hover:text-gray-50 cursor-pointer' onClick={() => navigate("/")}>HOME</li>
                     {/* <li>ABOUT US</li> */}
-                    <li
-                        className={`group relative flex cursor-pointer items-center gap-1`}
-                    >
+                    <li className={`group relative flex cursor-pointer items-center gap-1`} onClick={() =>navigate("/AboutUs")}>
                         <p className=' hover:text-gray-50 cursor-pointer'>ABOUT US</p>
-                        <BsChevronDown />
+                        {/* <BsChevronDown />
                         <div className="invisible absolute left-[57%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-gray-100 p-2 text-gray-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
                             <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-gray-100"></div>
                             {aboutLinks.map((subLink, i) => (
@@ -86,7 +84,7 @@ const Navbar = () => {
                                 // <p>{subLink.title}</p>
                                 // </Link>
                             ))}
-                        </div>
+                        </div> */}
                     </li>
                     {/* <li></li> */}
                     <li
@@ -100,6 +98,7 @@ const Navbar = () => {
                                 <div
                                     className="rounded-lg bg-transparent py-2 pl-2 hover:bg-gray-200"
                                     key={i}
+                                    onClick={() => navigate(`${subLink.link}`)}
                                 >
                                     <p>{subLink.title}</p>
                                 </div>
@@ -115,11 +114,11 @@ const Navbar = () => {
                             ))}
                         </div>
                     </li>
-                    <li className=' hover:text-gray-50 cursor-pointer'>SHOP</li>
+                    <li className=' hover:text-gray-50 cursor-pointer' onClick={() => navigate("/Shop")}>SHOP</li>
                     <li className=' hover:text-gray-50 cursor-pointer' onClick={() => navigate("/contactUs")}>CONTACT US</li>
-                    <li className=' bg-blue-600 hover:bg-blue-700 p-2 rounded-md text-xl'>
+                    {/* <li className=' bg-blue-600 hover:bg-blue-700 p-2 rounded-md text-xl'>
                         <IoSearch />
-                    </li>
+                    </li> */}
                 </ul>
 
                 <div className=' flex gap-4'>

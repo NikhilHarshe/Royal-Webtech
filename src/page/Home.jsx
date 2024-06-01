@@ -115,32 +115,32 @@ import ED1 from "../Components/assets/OurBlog/ED-1.jpg"
 const members = [
     {
         id: 1,
-        image: "",
+        image: "https://www.sonicseo.com/wp-content/uploads/2020/07/surgeon.jpg",
         name: "Dr. Stephan R. Bloesch",
         role: "Health Advisor & Consulting",
     },
     {
         id: 2,
-        image: "",
-        name: "Dr. Stephan R. Bloesch",
+        image: "https://praxis-zitzmann.de/wp-content/uploads/2016/01/team-member-4.jpg",
+        name: "Dr. Jenna Craw",
         role: "Health Advisor & Consulting",
     },
     {
         id: 3,
-        image: "",
-        name: "Dr. Stephan R. Bloesch",
+        image: "https://www.culinaryhealthfund.org/wp-content/uploads/2019/06/Electronic_funds_transfer-500x500.jpg",
+        name: "Dr. Stiphen Mewreek",
         role: "Health Advisor & Consulting",
     },
     {
         id: 4,
-        image: "",
-        name: "Dr. Stephan R. Bloesch",
+        image: "https://www.warragambamedical.com.au/wp-content/uploads/2023/10/team-2.jpg",
+        name: "Dr. Sebastian Sharma",
         role: "Health Advisor & Consulting",
     },
     {
         id: 5,
-        image: "",
-        name: "Dr. Stephan R. Bloesch",
+        image: "https://etsobgyn.com/wp-content/uploads/2023/09/female-doc-for-obgyn-blog-post.png",
+        name: "Dr. Trupti Aggrawal",
         role: "Health Advisor & Consulting",
     },
 ];
@@ -277,7 +277,7 @@ const Home = ({product}) => {
                             {
                                 members.map((data) => (
                                     <div className=' flex flex-col items-center '>
-                                        <img src={member} width={100} alt={data.name} />
+                                        <img src={data.image} width={140} className=' rounded-full' alt={data.name} />
                                         <p className=' text-lg text-gray-900 font-semibold'>{data.name} </p>
                                         <p className=' italic'>{data.role} </p>
                                     </div>
@@ -289,8 +289,8 @@ const Home = ({product}) => {
 
                 {/* section 4 Review */}
                 <section>
-                    <div className='flex flex-col w-9/12 mx-auto gap-5'>
-                        <h2>What our customers say</h2>
+                    <div className='flex flex-col w-9/12 mx-auto gap-5 mt-8'>
+                        <h2 className=' text-3xl font-semibold'>What our customers say</h2>
                         <div className=' flex'>
                             <ReviweSlider review={review} />
                             <img src={trustpilot} alt="trustpilot" width={200} />
