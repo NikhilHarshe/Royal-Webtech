@@ -8,7 +8,7 @@ import { BuyProduct } from '../services/opretions/paymentApi';
 
 const CartForm = () => {
     const { Token } = useSelector((state) => state.auth);
-    const {cartData, total } = useSelector((state) => state.cart);
+    const { cartData, total } = useSelector((state) => state.cart);
     // const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -28,14 +28,21 @@ const CartForm = () => {
         // console.log("Result in CartForm : ", result);
         const user = localStorage.getItem("user");
         console.log("user in side cart : ", user);
-        
+
         const productIdsAndQuantity = cartData.map(cart => ({ _id: cart._id, quantity: cart.quantity }));
         const userId = user?._id;
 
 
         if (user.Address !== null) {
+            const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+            const data = await response.json();
+            const rate = data.rates.INR;
+            console.log("rate : ", rate);
 
-            await BuyProduct(total, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
+            const totalInINR = (total * rate).toFixed(2);
+            console.log("totalInINR ", totalInINR);
+
+            await BuyProduct(totalInINR, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
         }
 
         e.target.reset();

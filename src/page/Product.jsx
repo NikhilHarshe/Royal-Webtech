@@ -137,21 +137,21 @@ const Product = () => {
     const [productData, setProductData] = useState('');
 
     useEffect(() => {
-        const fetchData = async() => {
-            try{
+        const fetchData = async () => {
+            try {
                 const res = await dispatch(fetchProductDetails(productId))
                 console.log("data in product ", res?.data);
                 setProductData(res?.data);
             }
-            catch (error){
-                console.log("Get Product data Api error in Proudct page",error);
+            catch (error) {
+                console.log("Get Product data Api error in Proudct page", error);
             }
         }
 
         fetchData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [])
-      console.log("product data prpeppdddddd", productData);
+    }, [])
+    console.log("product data prpeppdddddd", productData);
 
     // let productData = {};
     // product.forEach(element => {
@@ -161,15 +161,15 @@ const Product = () => {
     //     }
     // });
 
-    
+
     const CartHandler = (product) => {
         dispatch(addToCart(product));
     };
-    
+
     const total_amount = productData.Price;
     const closeCart = () => {
         dispatch(setCartClose());
-      }
+    }
 
     const productIdsAndQuantity = [{ _id: productData._id, quantity: 1 }];
     const userId = user?._id;
@@ -182,7 +182,15 @@ const Product = () => {
             navigate("/signIn");
         }
         if (user.Address !== null) {
-            await BuyProduct(total_amount, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
+            const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+            const data = await response.json();
+            const rate = data.rates.INR;
+            console.log("rate : ", rate);
+
+            const totalInINR = (total * rate).toFixed(2);
+            console.log("totalInINR ", totalInINR);
+
+            await BuyProduct(totalInINR, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
         }
         else {
             closeCart();
