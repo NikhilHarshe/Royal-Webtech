@@ -176,6 +176,8 @@ function loadScript(src) {
 
 
 
+
+
 // Buy the Course
 export const BuyProduct = async( total_amount, userId, idsAndQuantity, resetCart, navigate, dispatch) => {
   const toastId = toast.loading("Loading...")

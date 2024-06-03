@@ -31,12 +31,21 @@ export default function Cart() {
 
   const CheckOutHandler = async () => {
     // console.log("CheckOut cliked ", total);
-    if(!user){
+    if (!user) {
       closeCart();
       navigate("/signIn");
     }
     if (user.Address !== null) {
-      await BuyProduct(total, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
+
+      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+      const data = await response.json();
+      const rate = data.rates.INR;
+      console.log("rate : ", rate);
+
+      const totalInINR = (total * rate).toFixed(2);
+      console.log("totalInINR ", totalInINR);
+
+      await BuyProduct(totalInINR, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
     }
     else {
       closeCart();
