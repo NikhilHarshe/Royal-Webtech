@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 // Capture the payment and initiate the Razorpay order
 exports.capturePayment = async (req, res) => {
-  const { total_amount } = req.body;
+  const { total_amount, currency } = req.body;
 
   // console.log("total_amount : ", total_amount);
   if (!total_amount) {
@@ -20,9 +20,11 @@ exports.capturePayment = async (req, res) => {
   const options = {
     amount: total_amount * 100,
     // currency: "USD",
-    currency: "INR",
+    currency: currency || "IND",
     receipt: Math.random(Date.now()).toString(),
   };
+
+  // console.log("below option " , options);
 
   try {
     // Initiate the payment using Razorpay

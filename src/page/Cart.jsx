@@ -1,10 +1,17 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, decreaseQuantity, removeFromCart, resetCart, setCartClose } from '../slices/cartSlice'
 import { BuyProduct } from "../services/opretions/paymentApi"
 import { useNavigate } from 'react-router-dom'
+
+const currencySymbols = {
+  USD: '$',
+  GBP: '£',
+  EUR: '€',
+  INR: '₹',
+};
 
 export default function Cart() {
   // const [open, setOpen] = useState(true);
@@ -29,6 +36,30 @@ export default function Cart() {
     // console.log("User : ", user);
   }
 
+  const [newTotal, setNewTotal] = useState(total);
+  const currency = localStorage.getItem("Currency")
+
+  useEffect(() => {
+    if (currency && total) {
+      setNewTotal(total)  
+      currencyConverter(currency, total, setNewTotal);
+
+        // currencyConverter(currency, productData?.Price, setNewPrice);
+    }
+}, [currency, total, cartData]);
+
+const currencyConverter = async (selectedCurrency, amount, setAmount) => {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        const rate = data.rates[selectedCurrency];
+        const convertedAmount = (amount * rate).toFixed(2);
+        setAmount(convertedAmount);
+    } catch (error) {
+        console.error('Error fetching exchange rate: ', error);
+    }
+};
+
   const CheckOutHandler = async () => {
     // console.log("CheckOut cliked ", total);
     if (!user) {
@@ -37,15 +68,15 @@ export default function Cart() {
     }
     if (user.Address !== null) {
 
-      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
-      const data = await response.json();
-      const rate = data.rates.INR;
-      console.log("rate : ", rate);
+      // const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+      // const data = await response.json();
+      // const rate = data.rates.INR;
+      // console.log("rate : ", rate);
 
-      const totalInINR = (total * rate).toFixed(2);
-      console.log("totalInINR ", totalInINR);
+      // const totalInINR = (total * rate).toFixed(2);
+      // console.log("totalInINR ", totalInINR);
 
-      await BuyProduct(totalInINR, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
+      await BuyProduct(newTotal, userId, productIdsAndQuantity, resetCart, navigate, dispatch);
     }
     else {
       closeCart();
@@ -149,7 +180,7 @@ export default function Cart() {
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>${total}.00</p>
+                        <p>{currencySymbols[currency]}{newTotal}.00</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <div className="mt-6">

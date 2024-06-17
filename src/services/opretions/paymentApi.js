@@ -179,7 +179,7 @@ function loadScript(src) {
 
 
 // Buy the Course
-export const BuyProduct = async( total_amount, userId, idsAndQuantity, resetCart, navigate, dispatch) => {
+export const BuyProduct = async( total_amount, currency, userId, idsAndQuantity, resetCart, navigate, dispatch) => {
   const toastId = toast.loading("Loading...")
   try {
     // Loading the script of Razorpay SDK
@@ -193,7 +193,7 @@ export const BuyProduct = async( total_amount, userId, idsAndQuantity, resetCart
     }
 
     // Initiating the Order in Backend
-    const orderResponse = await apiConnector( "POST", PRODUCT_PAYMENT_API, {total_amount });
+    const orderResponse = await apiConnector( "POST", PRODUCT_PAYMENT_API, {total_amount, currency });
     
     console.log("inside buyproduct");
 
